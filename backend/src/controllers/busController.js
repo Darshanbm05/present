@@ -57,5 +57,3 @@ export const getPlaces=async(req,res)=>{
     }
 };
 
-const buses = await Bus.find(query);
-
