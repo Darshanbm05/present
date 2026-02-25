@@ -256,14 +256,22 @@ textarea{
         gap:10px;
     }
 
-    button{
-        width: 100%;
-    }
 
     .primary-btn{
         width:100%;
     }
     .contributer-container{
         padding: 15px;
+    }
+
+    .top-contribute-btn{
+        padding:6px 10px;
+        font-size:11px;
+        border-radius:6px;
+        min-width:auto;
+    }
+
+    .header-row{
+        align-items:center;
     }
 }
