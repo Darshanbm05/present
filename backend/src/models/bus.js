@@ -7,6 +7,12 @@ const BusSchema = new mongoose.Schema({
     index: true
   },
 
+  busStand: {
+  type: String,
+  required: true,
+  index: true
+  },
+
   from: {
     type: String,
     required: true,

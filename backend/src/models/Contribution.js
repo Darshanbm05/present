@@ -9,6 +9,12 @@ const ContributionSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+
+    busStand: {
+    type: String,
+    required: true,
+    index: true
+    },
     departureTime:String,
     busType:String,
     message:String,

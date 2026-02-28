@@ -3,14 +3,14 @@ import Bus from "../models/bus.js";
 
 export const getBuses=async(req,res)=>{
     try{
-        const{from,to}=req.query;
+        const{busStand,to}=req.query;
         
-        if(!from){
+        if(!busStand){
             return res.status(400).json({
-                message:"from and to required"
+                message:"busStand and to required"
             });
         }
-        let query={from};
+        let query={busStand};
         if(to){
             query.to=to;
         }
@@ -36,7 +36,8 @@ export const getPlaces=async(req,res)=>{
                 $group:{
                     _id:null,
                     fromPlaces:{$addToSet:"$from"},
-                    toPlaces:{$addToSet:"$to"}
+                    toPlaces:{$addToSet:"$to"},
+                    busStandPlaces:{$addToSet:"$busStand"}
                 }
             }
         ]);
@@ -47,7 +48,8 @@ export const getPlaces=async(req,res)=>{
         const uniquePlaces=[
             ...new Set([
                 ...places[0].fromPlaces,
-                ...places[0].toPlaces
+                ...places[0].toPlaces,
+                ...places[0].busStandPlaces
             ])
         ];
 
