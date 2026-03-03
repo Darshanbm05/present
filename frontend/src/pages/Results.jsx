@@ -54,7 +54,7 @@ function Results() {
 
       <h2 style={{ marginTop: "20px" }}>
         {to
-          ? `Results for ${busStand} `
+          ? `Results for ${busStand} to ${to} `
           : `All buses from ${busStand}`}
       </h2>
 
