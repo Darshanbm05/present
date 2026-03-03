@@ -1,135 +1,148 @@
-KSRTC Bus Info
+# KSRTC Bus Info
 
 A full-stack web application built to simplify access to KSRTC unreserved bus schedules by transforming publicly available PDF timetable data into a searchable, user-friendly web interface.
 
 This project aims to solve a real-world usability problem where bus schedule information is available only in static PDF formats on official portals.
 
-🚀 Problem Statement
+---
+
+## 🚀 Problem Statement
 
 KSRTC unreserved bus schedules are published in PDF format, which makes:
 
-Searching by route difficult
-
-Filtering time-consuming
-
-Mobile usage inconvenient
-
-Data updates non-interactive
+- Searching by route difficult  
+- Filtering time-consuming  
+- Mobile usage inconvenient  
+- Data updates non-interactive  
 
 This project converts static schedule data into a dynamic and searchable web application.
 
-🎯 Features
+---
 
-🔎 Search buses by route (From → To)
+## 🎯 Features
 
-🚌 Search all buses from a specific bus stand
+- 🔎 Search buses by route (From → To)
+- 🚌 Search all buses from a specific bus stand
+- ⏰ 24-hour time formatted schedule display
+- 📍 Structured route details (via places, service number, bus type)
+- 📝 Contribution system for requesting schedule updates
+- 📱 Fully responsive (mobile + desktop optimized)
+- ⚡ Fast client-side experience using Vite
 
-⏰ 24-hour time formatted schedule display
+---
 
-📍 Structured route details (via places, service number, bus type)
+## 🛠 Tech Stack
 
-📝 Contribution system for requesting schedule updates
+### Frontend
+- React
+- Vite
+- React Router
+- Custom Responsive CSS
 
-📱 Fully responsive (mobile + desktop optimized)
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
 
-⚡ Fast client-side experience using Vite
+### Database
+- MongoDB Atlas
 
-🛠 Tech Stack
-Frontend
+### Deployment
+- Backend hosted on Render
+- Frontend hosted on Vercel
 
-React
+---
 
-Vite
-
-React Router
-
-CSS (custom responsive styling)
-
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB
-
-Mongoose
-
-Database
-
-MongoDB Atlas
-
-Deployment
-
-Backend hosted on Render
-
-Frontend hosted on Vercel
-
-🏗 Architecture
+## 🏗 Architecture
 Frontend (React)
-        ↓
+↓
 REST API (Express)
-        ↓
+↓
 MongoDB Atlas
 
-Frontend communicates with backend via REST APIs.
 
-Backend handles data querying, filtering, and validation.
+- Frontend communicates with backend via REST APIs.
+- Backend handles data querying, filtering, and validation.
+- MongoDB stores structured schedule data.
+- Contribution requests are stored in a separate collection for review.
 
-MongoDB stores structured schedule data.
+---
 
-Contribution requests are stored in a separate collection for review.
+## 📂 Project Structure
 
-📂 Project Structure
 KSRTC-Bus-Info/
 │
 ├── backend/
-│   ├── models/
-│   ├── controllers/
-│   ├── routes/
-│   ├── server.js
-│   └── package.json
+│ ├── models/
+│ ├── controllers/
+│ ├── routes/
+│ ├── server.js
+│ └── package.json
 │
 ├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   └── App.jsx
-│   ├── index.css
-│   └── package.json
+│ ├── src/
+│ │ ├── pages/
+│ │ ├── components/
+│ │ └── App.jsx
+│ ├── index.css
+│ └── package.json
 │
 └── README.md
 
-⚙️ Installation & Setup
 
-1️⃣ Clone the repository
-git clone https://github.com/Darshanbm05/ksrtc_bus_info
+---
+
+## ⚙️ Installation & Setup
+
+### Clone the repository:
+
+```bash
+git clone <repository-url>
 cd KSRTC-Bus-Info
+```
 
-2️⃣ Backend Setup
+### Backend Setup:
+
+```bash
 cd backend
 npm install
+```
 
-Create .env file:
+### Create a .env file inside backend and add:
 
+```bash
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
+```
 
-Run backend:
+### Run backend:
 
+```bash
 npm run dev
-3️⃣ Frontend Setup
+```
+
+### Frontend Setup:
+
+```bash
 cd frontend
 npm install
+```
 
-Create .env file:
+### Create a .env file inside frontend and add:
 
+```bash
 VITE_API_URL=http://localhost:5000
+```
 
-Run frontend:
+### Run frontend:
 
+```bash
 npm run dev
-🗄 Data Handling
+```
+
+
+## 🗄 Data Handling
 
 Schedule data is extracted from publicly available PDF timetables.
 
@@ -137,22 +150,22 @@ Data is cleaned and normalized before insertion.
 
 Time values are converted to proper HH:MM 24-hour format.
 
-Route names are standardized (uppercase normalization).
+Route names are standardized using uppercase normalization.
 
-Bus stand-based search structure implemented for accurate filtering.
+Bus stand-based search structure is implemented for accurate filtering.
 
-📝 Contribution System
+
+## 📝 Contribution System
 
 Users can:
 
-Request addition of missing schedules
-
-Suggest updates for incorrect data
+- Request addition of missing schedules
+- Suggest updates for incorrect data
 
 Requests are stored in a separate collection and can be reviewed before approval.
 
 
-⚠ Disclaimer
+## ⚠ Disclaimer
 
 This is an independent project developed for educational and practical purposes.
 
