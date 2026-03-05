@@ -83,7 +83,13 @@ select{
     font-size:14px;
 }
 
+.place-select{
+    max-width:260px;
+}
 
+.place-select .react-select__control{
+    min-height:40px;
+}
 
 buttton{
     padding:12px 18px;
@@ -279,5 +285,9 @@ textarea{
 
     select{
         width:100%;
+    }
+
+    .place-select{
+        max-width:100%;
     }
 }

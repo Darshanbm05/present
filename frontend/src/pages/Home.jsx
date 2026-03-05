@@ -94,21 +94,16 @@ function Home(){
             </div>
 
             <div className="search-card">
+
                 <h3>Search all buses from a place</h3>
                                 <Select
+                                    className="place-select"
                                     options={placeOptions}
                                     value={placeOptions.find(p=>p.value===busStand)}
                                     onChange={(selected)=>setBusStand(selected.value)}
                                     placeholder="Select From"
                                     isSearchable
-                                    styles={{
-                                        container: (base) => ({
-                                        ...base,
-                                        width: "300px"
-                                        })
-                                    }}
                                 />
-
                     <br /><br />
 
                     <button
